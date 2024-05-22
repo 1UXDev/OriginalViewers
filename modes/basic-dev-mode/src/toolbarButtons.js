@@ -35,52 +35,52 @@ function _createSetToolActiveCommands(toolName, toolGroupIds = ['default', 'mpr'
 }
 
 const toolbarButtons: Button[] = [
-  {
-    id: 'MeasurementTools',
-    uiType: 'ohif.splitButton',
-    props: {
-      groupId: 'MeasurementTools',
-      evaluate: 'evaluate.group.promoteToPrimaryIfCornerstoneToolNotActiveInTheList',
-      primary: ToolbarService.createButton({
-        id: 'Length',
-        icon: 'tool-length',
-        label: 'Length',
-        tooltip: 'Length Tool',
-        commands: _createSetToolActiveCommands('Length'),
-        evaluate: 'evaluate.cornerstoneTool',
-      }),
-      secondary: {
-        icon: 'chevron-down',
-        tooltip: 'More Measure Tools',
-      },
-      items: [
-        ToolbarService.createButton({
-          id: 'Bidirectional',
-          icon: 'tool-bidirectional',
-          label: 'Bidirectional',
-          tooltip: 'Bidirectional Tool',
-          commands: _createSetToolActiveCommands('Bidirectional'),
-          evaluate: 'evaluate.cornerstoneTool',
-        }),
-        ToolbarService.createButton({
-          id: 'EllipticalROI',
-          icon: 'tool-ellipse',
-          label: 'Ellipse',
-          tooltip: 'Ellipse ROI',
-          commands: _createSetToolActiveCommands('EllipticalROI'),
-          evaluate: 'evaluate.cornerstoneTool',
-        }),
-        ToolbarService.createButton({
-          id: 'CircleROI',
-          icon: 'tool-circle',
-          label: 'Circle',
-          tooltip: 'Circle Tool',
-          commands: _createSetToolActiveCommands('CircleROI'),
-          evaluate: 'evaluate.cornerstoneTool',
-        }),
-      ],
-    },
-  },
+  // {
+  //   id: 'MeasurementTools',
+  //   uiType: 'ohif.splitButton',
+  //   props: {
+  //     groupId: 'MeasurementTools',
+  //     evaluate: 'evaluate.group.promoteToPrimaryIfCornerstoneToolNotActiveInTheList',
+  //     primary: ToolbarService.createButton({
+  //       id: 'Length',
+  //       icon: 'tool-length',
+  //       label: 'Length',
+  //       tooltip: 'Length Tool',
+  //       commands: _createSetToolActiveCommands('Length'),
+  //       evaluate: 'evaluate.cornerstoneTool',
+  //     }),
+  //     secondary: {
+  //       icon: 'chevron-down',
+  //       tooltip: 'More Measure Tools',
+  //     },
+  //     items: [
+  //       ToolbarService.createButton({
+  //         id: 'Bidirectional',
+  //         icon: 'tool-bidirectional',
+  //         label: 'Bidirectional',
+  //         tooltip: 'Bidirectional Tool',
+  //         commands: _createSetToolActiveCommands('Bidirectional'),
+  //         evaluate: 'evaluate.cornerstoneTool',
+  //       }),
+  //       ToolbarService.createButton({
+  //         id: 'EllipticalROI',
+  //         icon: 'tool-ellipse',
+  //         label: 'Ellipse',
+  //         tooltip: 'Ellipse ROI',
+  //         commands: _createSetToolActiveCommands('EllipticalROI'),
+  //         evaluate: 'evaluate.cornerstoneTool',
+  //       }),
+  //       ToolbarService.createButton({
+  //         id: 'CircleROI',
+  //         icon: 'tool-circle',
+  //         label: 'Circle',
+  //         tooltip: 'Circle Tool',
+  //         commands: _createSetToolActiveCommands('CircleROI'),
+  //         evaluate: 'evaluate.cornerstoneTool',
+  //       }),
+  //     ],
+  //   },
+  // },
   {
     id: 'Zoom',
     uiType: 'ohif.radioGroup',

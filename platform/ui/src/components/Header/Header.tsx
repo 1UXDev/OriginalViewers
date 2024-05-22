@@ -64,7 +64,7 @@ function Header({
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <div className="flex items-center justify-center space-x-2">{children}</div>
         </div>
-        <div className="absolute right-0 top-1/2 flex -translate-y-1/2 select-none items-center">
+        {/* <div className="absolute right-0 top-1/2 flex -translate-y-1/2 select-none items-center">
           {showPatientInfo !== PatientInfoVisibility.DISABLED && (
             <HeaderPatientInfo
               servicesManager={servicesManager}
@@ -90,7 +90,7 @@ function Header({
               </IconButton>
             </Dropdown>
           </div>
-        </div>
+        </div> */}
       </div>
     </NavBar>
   );

@@ -1,24 +1,41 @@
 window.config = {
-  routerBasename: '/',
-  // whiteLabeling: {},
+  routerBasename: '/ohif', // -> /
+  whiteLabeling: {
+    createLogoComponentFn: function (React) {
+      return React.createElement(
+        'a',
+        {
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          className: 'text-white',
+          href: 'https://skill-circle.com',
+        },
+        React.createElement('h4', {}, 'CMR Orbit')
+        // React.createElement('img', {
+        //   src: './assets/orb.svg',
+        //   className: 'w-8 h-8',
+        // })
+      );
+    },
+  },
   extensions: [],
   modes: [],
   customizationService: {},
-  showStudyList: true,
+  showStudyList: false,
   // some windows systems have issues with more than 3 web workers
-  maxNumberOfWebWorkers: 3,
+  maxNumberOfWebWorkers: 24,
   // below flag is for performance reasons, but it might not work for all servers
   showWarningMessageForCrossOrigin: true,
   showCPUFallbackMessage: true,
   showLoadingIndicator: true,
-  strictZSpacingForVolumeViewport: true,
+  strictZSpacingForVolumeViewport: true, // was false... explore
   groupEnabledModesFirst: true,
   maxNumRequests: {
-    interaction: 100,
+    interaction: 200,
     thumbnail: 75,
     // Prefetch number is dependent on the http protocol. For http 2 or
     // above, the number of requests can be go a lot higher.
-    prefetch: 25,
+    prefetch: 50,
   },
   // filterQueryParam: false,
   defaultDataSourceName: 'dicomweb',
@@ -119,25 +136,15 @@ window.config = {
     // Could use services manager here to bring up a dialog/modal if needed.
     console.warn('test, navigate to https://ohif.org/');
   },
-  // whiteLabeling: {
-  //   /* Optional: Should return a React component to be rendered in the "Logo" section of the application's Top Navigation bar */
-  //   createLogoComponentFn: function (React) {
-  //     return React.createElement(
-  //       'a',
-  //       {
-  //         target: '_self',
-  //         rel: 'noopener noreferrer',
-  //         className: 'text-purple-600 line-through',
-  //         href: '/',
-  //       },
-  //       React.createElement('img',
-  //         {
-  //           src: './assets/customLogo.svg',
-  //           className: 'w-8 h-8',
-  //         }
-  //       ))
-  //   },
-  // },
+
+  // ----------------- experimental settings
+  disableEditing: true,
+  useNorm16Texture: true, // true is experimental setting, might lead to crash on intel macs
+  preferSizeOverAccuracy: true, // true will increase speed, but create artifacts, better support, but not sure if this actually requires a number to represent the multiple (2,4,8,16 or 32)
+  PatientInfoVisibility: false,
+  showPatientInfo: false,
+  // -----------------
+
   hotkeys: [
     {
       commandName: 'incrementActiveViewport',

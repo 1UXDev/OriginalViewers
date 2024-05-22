@@ -19,20 +19,20 @@ module.exports = {
     colors: {
       overlay: 'rgba(0, 0, 0, 0.8)',
       transparent: 'transparent',
-      black: '#000',
+      black: '#111',
       white: '#fff',
       initial: 'initial',
       inherit: 'inherit',
 
       aqua: {
-        pale: '#7bb2ce',
+        pale: '#519de7', //'#7bb2ce',
       },
 
       primary: {
-        light: '#5acce6',
+        light: '#eee', //#5acce6
         main: '#0944b3',
         dark: '#090c29',
-        active: '#348cfd',
+        active: '#fff', // #348cfd
       },
 
       inputfield: {
@@ -45,7 +45,7 @@ module.exports = {
       secondary: {
         light: '#3a3f99',
         main: '#2b166b',
-        dark: '#041c4a',
+        dark: '#324178', // #041c4a
         active: '#1f1f27',
       },
 

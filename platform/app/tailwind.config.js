@@ -25,38 +25,38 @@ module.exports = {
       xl: '1280px',
     },
     colors: {
+      indigo: {
+        dark: '#0b1a42',
+      },
       overlay: 'rgba(0, 0, 0, 0.8)',
       transparent: 'transparent',
-      black: '#000',
+      black: '#111111', //#000
       white: '#fff',
       initial: 'initial',
       inherit: 'inherit',
 
-      indigo: {
-        dark: '#0b1a42',
-      },
       aqua: {
-        pale: '#7bb2ce',
+        pale: '#519de7', //'#7bb2ce',
       },
 
       primary: {
-        light: '#5acce6',
+        light: '#eee', //#5acce6
         main: '#0944b3',
-        dark: '#090c29',
-        active: '#348cfd',
+        dark: '#1c1d32', //'#090c29',
+        active: '#fff', // #348cfd
       },
 
       inputfield: {
         main: '#3a3f99',
         disabled: '#2b166b',
-        focus: '#5acce6',
+        focus: '#519de7', // #5acce6
         placeholder: '#39383f',
       },
 
       secondary: {
         light: '#3a3f99',
         main: '#2b166b',
-        dark: '#041c4a',
+        dark: '#324178', // #041c4a
         active: '#1f1f27',
       },
 
