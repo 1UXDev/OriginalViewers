@@ -392,6 +392,10 @@ const ICONS = {
   'icon-toolbar-back': iconToolbarBack,
   'icon-multiple-patients': iconMultiplePatients,
   /** Volume Rendering */
+  'MR-Angio': MRAngio,
+  'MR-Default': MRDefault,
+  'MR-MIP': MRMIP,
+  'MR-T2-Brain': MRT2Brain,
   'CT-AAA': CTAAA,
   'CT-AAA2': CTAAA2,
   'CT-Air': CTAir,
@@ -414,10 +418,7 @@ const ICONS = {
   'CT-Pulmonary-Arteries': CTPulmonaryArteries,
   'CT-Soft-Tissue': CTSoftTissue,
   'DTI-FA-Brain': DTIFABrain,
-  'MR-Angio': MRAngio,
-  'MR-Default': MRDefault,
-  'MR-MIP': MRMIP,
-  'MR-T2-Brain': MRT2Brain,
+
   VolumeRendering: VolumeRendering,
   'action-new-dialog': actionNewDialog,
   /** LAYOUT */
