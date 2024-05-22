@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 8080;
 
 const app = express();
 
-const staticPath = path.join('/home/ubuntu/viewer/platform/app/ohif');
+const staticPath = path.join('/home/ubuntu/viewer2/platform/app/ohif');
 
 app.use((req, res, next) => {
   res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
