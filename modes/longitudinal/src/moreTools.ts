@@ -41,6 +41,14 @@ const moreTools = [
           evaluate: 'evaluate.action',
         }),
         createButton({
+          id: 'crosshairs',
+          icon: 'tool-crosshair',
+          label: 'Crosshairs',
+          tooltip: 'Crosshairs',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
           id: 'rotate-right',
           icon: 'tool-rotate-right',
           label: 'Rotate Right',
