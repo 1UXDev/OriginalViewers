@@ -10,7 +10,7 @@ window.config = {
           className: 'text-white',
           href: 'https://skill-circle.com',
         },
-        React.createElement('h4', {}, 'CMR Orbit')
+        React.createElement('h4', {}, 'CMR Orbit Viewer')
         // React.createElement('img', {
         //   src: './assets/orb.svg',
         //   className: 'w-8 h-8',
