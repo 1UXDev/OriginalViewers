@@ -11,7 +11,7 @@
   border-width: 1px;
 }
 
-.border-secondary-light/60 {
+.border-secondary-light {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -27,7 +27,7 @@
   color: #5abaff;
 }
 
-.hover\:bg-customblue-300:hover {
+.hover-bg-customblue-300:hover {
   background-color: #357edd;
 }
 
@@ -43,7 +43,7 @@
   align-items: center;
 }
 
-.gap-1.5 {
+.gap-6 {
   gap: 6px;
 }
 
@@ -51,12 +51,12 @@
   border-radius: 4px;
 }
 
-.px-1.5 {
+.px-6 {
   padding-left: 6px;
   padding-right: 6px;
 }
 
-.py-1.5 {
+.py-6 {
   padding-top: 6px;
   padding-bottom: 6px;
 }
@@ -73,7 +73,7 @@
   font-size: 0.75rem;
 }
 
-.text-[10px] {
+.text-10px {
   font-size: 10px;
 }
 
