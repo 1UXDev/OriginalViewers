@@ -1,3 +1,98 @@
 .cine-fps-range-tooltip .tooltip.tooltip-top {
   bottom: 85% !important;
 }
+
+.cine-fps-range-tooltip {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 4px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-secondary-light/60 {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.bg-primary-dark {
+  background-color: #1a1a1a;
+}
+
+.text-primary-active {
+  color: #007bff;
+}
+
+.text-primary-light {
+  color: #5abaff;
+}
+
+.hover\:bg-customblue-300:hover {
+  background-color: #357edd;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.select-none {
+  user-select: none;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-1.5 {
+  gap: 6px;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.px-1.5 {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.py-1.5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-[10px] {
+  font-size: 10px;
+}
+
+.text-aqua-pale {
+  color: #7fffd4;
+}
+
+.w-3 {
+  width: 12px;
+}
+
+.h-5 {
+  height: 20px;
+}
+
+.ml-3 {
+  margin-left: 12px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
