@@ -164,7 +164,7 @@ CinePlayer.defaultProps = {
   minFrameRate: 1,
   maxFrameRate: 90,
   stepFrameRate: 1,
-  frameRate: 24,
+  frameRate: 12,
   onPlayPauseChange: noop,
   onFrameRateChange: noop,
   onClose: noop,
