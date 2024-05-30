@@ -12,9 +12,10 @@ function WrappedCinePlayer({
   enabledVPElement: HTMLElement;
   viewportId: string;
 }>) {
+  // echanged the "24" here for 12, as 24 was way too fast, same for the CincePlayer.tsx
   const { customizationService, displaySetService, viewportGridService } = servicesManager.services;
   const [{ isCineEnabled, cines }, cineService] = useCine();
-  const [newStackFrameRate, setNewStackFrameRate] = useState(24);
+  const [newStackFrameRate, setNewStackFrameRate] = useState(12);
   const [dynamicInfo, setDynamicInfo] = useState(null);
   const [appConfig] = useAppConfig();
   const isMountedRef = useRef(null);
@@ -24,7 +25,7 @@ function WrappedCinePlayer({
       return;
     }
 
-    const { isPlaying = false, frameRate = 24 } = cines[viewportId];
+    const { isPlaying = false, frameRate = 12 } = cines[viewportId];
     const validFrameRate = Math.max(frameRate, 1);
 
     return isPlaying
@@ -39,7 +40,7 @@ function WrappedCinePlayer({
 
     const { viewports } = viewportGridService.getState();
     const { displaySetInstanceUIDs } = viewports.get(viewportId);
-    let frameRate = 24;
+    let frameRate = 12;
     let isPlaying = cines[viewportId]?.isPlaying || false;
     displaySetInstanceUIDs.forEach(displaySetInstanceUID => {
       const displaySet = displaySetService.getDisplaySetByUID(displaySetInstanceUID);

@@ -175,6 +175,10 @@ window.config = {
     { commandName: 'scaleDownViewport', label: 'Zoom Out', keys: ['-'] },
     { commandName: 'fitViewportToWindow', label: 'Zoom to Fit', keys: ['='] },
     { commandName: 'resetViewport', label: 'Reset', keys: ['space'] },
+
+    { commandName: 'nextImage', label: 'Next Image', keys: ['pagedown'] },
+    { commandName: 'previousImage', label: 'Previous Image', keys: ['pageup'] },
+
     { commandName: 'nextViewportDisplaySet', label: 'Next Series', keys: ['down'] },
     { commandName: 'previousViewportDisplaySet', label: 'Previous Series', keys: ['up'] },
     // { commandName: 'nextImage', label: 'Next Image', keys: ['down'] },
