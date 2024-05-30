@@ -1,5 +1,5 @@
 window.config = {
-  routerBasename: '/ohif', // -> /
+  routerBasename: '/ohif', // "/"
   whiteLabeling: {
     createLogoComponentFn: function (React) {
       return React.createElement(
@@ -89,6 +89,48 @@ window.config = {
       },
     },
   ],
+  // // DATA SOURCES for testing
+  // dataSources: [
+  //   {
+  //     friendlyName: 'dcmjs DICOMWeb Server',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+  //     sourceName: 'dicomweb',
+  //     configuration: {
+  //       name: 'aws',
+  //       // old server
+  //       // wadoUriRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/wado',
+  //       // qidoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
+  //       // wadoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
+  //       // new server
+  //       wadoUriRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       qidoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       wadoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       qidoSupportsIncludeField: false,
+  //       supportsReject: false,
+  //       imageRendering: 'wadors',
+  //       thumbnailRendering: 'wadors',
+  //       enableStudyLazyLoad: true,
+  //       supportsFuzzyMatching: false,
+  //       supportsWildcard: true,
+  //       staticWado: true,
+  //       singlepart: 'bulkdata,video,pdf',
+  //     },
+  //   },
+  //   {
+  //     friendlyName: 'dicom json',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
+  //     sourceName: 'dicomjson',
+  //     configuration: {
+  //       name: 'json',
+  //     },
+  //   },
+  //   {
+  //     friendlyName: 'dicom local',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
+  //     sourceName: 'dicomlocal',
+  //     configuration: {},
+  //   },
+  // ],
   httpErrorHandler: error => {
     // This is 429 when rejected from the public idc sandbox too often.
     console.warn(error.status);

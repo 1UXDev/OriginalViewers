@@ -73,7 +73,10 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
   );
 
   return (
-    <div className={className}>
+    <div
+      className={className}
+      style={{ opacity: '0.85' }}
+    >
       {isDynamic && dynamicInfo && (
         <InputRange
           value={dynamicInfo.timePointIndex}
@@ -91,14 +94,14 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
           showLabel={false}
         />
       )}
-      <div className="border-secondary-light bg-primary-dark inline-flex select-none items-center gap-6 rounded border px-6 py-6">
+      <div className=" bg-secondary-dark inline-flex select-none items-center gap-6 rounded px-1 py-1">
         <Icon
           name={getPlayPauseIconName()}
-          className="active:text-primary-light hover-bg-customblue-300 cursor-pointer text-white hover:rounded"
+          className="active:text-primary-light hover-bg-customblue-300 h-5 w-5 cursor-pointer text-white hover:rounded"
           onClick={() => onPlayPauseChange(!isPlaying)}
         />
         {isDynamic && dynamicInfo && (
-          <div className="min-w-14 max-w-40 flex flex-col text-white">
+          <div className="min-w-12 max-w-20 flex flex-col text-white">
             <div className="text-10px">
               <span className="w-2 text-white">{dynamicInfo.timePointIndex}</span>{' '}
               <span className="text-aqua-pale">{`/${dynamicInfo.numTimePoints}`}</span>
@@ -106,7 +109,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
             <div className="text-aqua-pale text-xs">{dynamicInfo.label}</div>
           </div>
         )}
-        <div className="border-secondary-light ml-3 flex h-5 items-stretch gap-1 rounded border">
+        <div className="bg-primary-dark flex h-5 items-stretch gap-2 rounded px-2 ">
           <div
             className={`${fpsButtonClassNames} rounded-l`}
             onClick={() => handleSetFrameRate(frameRate - 1)}
@@ -146,7 +149,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
         </div>
         <Icon
           name="icon-close"
-          className="text-primary-active active:text-primary-light hover-bg-customblue-300 cursor-pointer hover:rounded"
+          className="text-primary-active active:text-primary-light hover-bg-customblue-300 h-5 w-5 cursor-pointer hover:rounded"
           onClick={onClose}
         />
       </div>
