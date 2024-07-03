@@ -1,7 +1,5 @@
-/** @type {AppTypes.Config} */
-
 window.config = {
-  routerBasename: '/ohif', // -> /
+  routerBasename: '/ohif', // "/ohif"
   whiteLabeling: {
     createLogoComponentFn: function (React) {
       return React.createElement(
@@ -12,7 +10,7 @@ window.config = {
           className: 'text-white',
           href: 'https://skill-circle.com',
         },
-        React.createElement('h4', {}, 'CMR Orbit')
+        React.createElement('h4', {}, 'CMR Orbit Viewer')
         // React.createElement('img', {
         //   src: './assets/orb.svg',
         //   className: 'w-8 h-8',
@@ -30,8 +28,7 @@ window.config = {
   showWarningMessageForCrossOrigin: true,
   showCPUFallbackMessage: true,
   showLoadingIndicator: true,
-  experimentalStudyBrowserSort: false,
-  strictZSpacingForVolumeViewport: true,
+  strictZSpacingForVolumeViewport: true, // was false... explore
   groupEnabledModesFirst: true,
   maxNumRequests: {
     interaction: 200,
@@ -57,118 +54,23 @@ window.config = {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
       sourceName: 'dicomweb',
       configuration: {
-        friendlyName: 'AWS S3 Static wado server',
-        name: 'aws',
-        wadoUriRoot: 'https://d33do7qe4w26qo.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d33do7qe4w26qo.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d33do7qe4w26qo.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
-        supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'ohif2',
-      configuration: {
-        friendlyName: 'AWS S3 Static wado secondary server',
-        name: 'aws',
-        wadoUriRoot: 'https://d28o5kq0jsoob5.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d28o5kq0jsoob5.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d28o5kq0jsoob5.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        supportsReject: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
-        supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'ohif3',
-      configuration: {
-        friendlyName: 'AWS S3 Static wado secondary server',
-        name: 'aws',
-        wadoUriRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        supportsReject: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
-        supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'local5000',
-      configuration: {
-        friendlyName: 'Static WADO Local Data',
-        name: 'DCM4CHEE',
-        qidoRoot: 'http://localhost:5000/dicomweb',
-        wadoRoot: 'http://localhost:5000/dicomweb',
-        qidoSupportsIncludeField: false,
+        friendlyName: 'Orthanc Server',
+        name: 'Orthanc',
+        wadoUriRoot: 'https://skill-circle.com/dicomweb/dicom-web',
+        qidoRoot: 'https://skill-circle.com/dicomweb/dicom-web',
+        wadoRoot: 'https://skill-circle.com/dicomweb/dicom-web',
+        qidoSupportsIncludeField: true,
         supportsReject: true,
-        supportsStow: true,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
+        omitQuotationForMultipartRequest: true,
         enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
+        supportsFuzzyMatching: true,
         supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'video',
+        dicomUploadEnabled: false,
         bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
+          enabled: false, // check if this resolves error -> it does
         },
-      },
-    },
-
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomwebproxy',
-      sourceName: 'dicomwebproxy',
-      configuration: {
-        friendlyName: 'dicomweb delegating proxy',
-        name: 'dicomwebproxy',
       },
     },
     {
@@ -187,6 +89,48 @@ window.config = {
       },
     },
   ],
+  // // DATA SOURCES for testing
+  // dataSources: [
+  //   {
+  //     friendlyName: 'dcmjs DICOMWeb Server',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+  //     sourceName: 'dicomweb',
+  //     configuration: {
+  //       name: 'aws',
+  //       // old server
+  //       // wadoUriRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/wado',
+  //       // qidoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
+  //       // wadoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
+  //       // new server
+  //       wadoUriRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       qidoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       wadoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       qidoSupportsIncludeField: false,
+  //       supportsReject: false,
+  //       imageRendering: 'wadors',
+  //       thumbnailRendering: 'wadors',
+  //       enableStudyLazyLoad: true,
+  //       supportsFuzzyMatching: false,
+  //       supportsWildcard: true,
+  //       staticWado: true,
+  //       singlepart: 'bulkdata,video,pdf',
+  //     },
+  //   },
+  //   {
+  //     friendlyName: 'dicom json',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
+  //     sourceName: 'dicomjson',
+  //     configuration: {
+  //       name: 'json',
+  //     },
+  //   },
+  //   {
+  //     friendlyName: 'dicom local',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
+  //     sourceName: 'dicomlocal',
+  //     configuration: {},
+  //   },
+  // ],
   httpErrorHandler: error => {
     // This is 429 when rejected from the public idc sandbox too often.
     console.warn(error.status);
@@ -231,18 +175,25 @@ window.config = {
     { commandName: 'scaleDownViewport', label: 'Zoom Out', keys: ['-'] },
     { commandName: 'fitViewportToWindow', label: 'Zoom to Fit', keys: ['='] },
     { commandName: 'resetViewport', label: 'Reset', keys: ['space'] },
-    { commandName: 'nextImage', label: 'Next Image', keys: ['down'] },
-    { commandName: 'previousImage', label: 'Previous Image', keys: ['up'] },
-    {
-      commandName: 'previousViewportDisplaySet',
-      label: 'Previous Series',
-      keys: ['pagedown'],
-    },
-    {
-      commandName: 'nextViewportDisplaySet',
-      label: 'Next Series',
-      keys: ['pageup'],
-    },
+
+    { commandName: 'nextImage', label: 'Next Image', keys: ['pagedown'] },
+    { commandName: 'previousImage', label: 'Previous Image', keys: ['pageup'] },
+
+    { commandName: 'nextViewportDisplaySet', label: 'Next Series', keys: ['down'] },
+    { commandName: 'previousViewportDisplaySet', label: 'Previous Series', keys: ['up'] },
+    // { commandName: 'nextImage', label: 'Next Image', keys: ['down'] },
+    // { commandName: 'previousImage', label: 'Previous Image', keys: ['up'] },
+
+    // {
+    //   commandName: 'previousViewportDisplaySet',
+    //   label: 'Previous Series',
+    //   keys: ['pagedown'],
+    // },
+    // {
+    //   commandName: 'nextViewportDisplaySet',
+    //   label: 'Next Series',
+    //   keys: ['pageup'],
+    // },
     {
       commandName: 'setToolActive',
       commandOptions: { toolName: 'Zoom' },
