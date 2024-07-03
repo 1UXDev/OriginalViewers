@@ -83,18 +83,18 @@ const moreTools = [
         //   },
         //   evaluate: ['evaluate.cornerstone.synchronizer', 'evaluate.not3D'],
         // }),
-        createButton({
-          id: 'ReferenceLines',
-          icon: 'tool-referenceLines',
-          label: 'Reference Lines',
-          tooltip: 'Show Reference Lines',
-          commands: 'toggleEnabledDisabledToolbar',
-          listeners: {
-            [ViewportGridService.EVENTS.ACTIVE_VIEWPORT_ID_CHANGED]: ReferenceLinesListeners,
-            [ViewportGridService.EVENTS.VIEWPORTS_READY]: ReferenceLinesListeners,
-          },
-          evaluate: 'evaluate.cornerstoneTool.toggle',
-        }),
+        // createButton({
+        //   id: 'ReferenceLines',
+        //   icon: 'tool-referenceLines',
+        //   label: 'Reference Lines',
+        //   tooltip: 'Show Reference Lines',
+        //   commands: 'toggleEnabledDisabledToolbar',
+        //   listeners: {
+        //     [ViewportGridService.EVENTS.ACTIVE_VIEWPORT_ID_CHANGED]: ReferenceLinesListeners,
+        //     [ViewportGridService.EVENTS.VIEWPORTS_READY]: ReferenceLinesListeners,
+        //   },
+        //   evaluate: 'evaluate.cornerstoneTool.toggle',
+        // }),
         createButton({
           id: 'ImageOverlayViewer',
           icon: 'toggle-dicom-overlay',

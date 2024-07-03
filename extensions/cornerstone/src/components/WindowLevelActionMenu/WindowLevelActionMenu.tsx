@@ -127,7 +127,7 @@ export function WindowLevelActionMenu({
         ColorMap
       </span>
       <AllInOneMenu.IconMenu
-        icon="viewport-window-level"
+        icon="icon-colormap"
         backLabel="Window Level & Presets"
         verticalDirection={verticalDirection}
         horizontalDirection={horizontalDirection}

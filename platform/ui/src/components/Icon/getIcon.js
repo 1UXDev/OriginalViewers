@@ -165,6 +165,8 @@ import oldStop from './../../assets/icons/old-stop.svg';
 
 /** ColorLut */
 import iconColorLUT from './../../assets/icons/icon-color-lut.svg';
+// custom colormap Icon
+import iconColormap from './../../assets/icons/icon-colormap.svg';
 
 /** New Patient Info Toolbar */
 import iconChevronPatient from './../../assets/icons/icon-chevron-patient.svg';
@@ -224,6 +226,7 @@ import tab4D from './../../assets/icons/tab-4d.svg';
 import investigationalUse from './../../assets/icons/illustration-investigational-use.svg';
 
 const ICONS = {
+  'icon-colormap': iconColormap,
   'arrow-down': arrowDown,
   'arrow-left': arrowLeft,
   'arrow-right': arrowRight,
