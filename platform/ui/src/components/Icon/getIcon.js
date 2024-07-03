@@ -1,4 +1,8 @@
 import React from 'react';
+
+// custom
+import colorMap from './../../assets/icons/color-map.svg';
+
 // Icons
 
 import arrowDown from './../../assets/icons/arrow-down.svg';
@@ -226,6 +230,9 @@ import tab4D from './../../assets/icons/tab-4d.svg';
 import investigationalUse from './../../assets/icons/illustration-investigational-use.svg';
 
 const ICONS = {
+  // custom
+  'color-map': colorMap,
+
   'icon-colormap': iconColormap,
   'arrow-down': arrowDown,
   'arrow-left': arrowLeft,
