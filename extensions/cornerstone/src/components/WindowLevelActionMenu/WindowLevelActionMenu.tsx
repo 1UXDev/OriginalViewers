@@ -114,27 +114,32 @@ export function WindowLevelActionMenu({
 
   return (
     <>
-      <span
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 28,
-          zIndex: 100,
-          fontSize: 14,
-          color: 'white',
-        }}
-      >
-        ColorMap
-      </span>
+      <style>
+        {`
+          .icon-before-element::before {
+            content: 'Color Map';
+            display: block;
+            width: 48px;
+            height: 10px;
+            font-size: 12px;
+            line-height: 10px;
+            color:white;
+            position: absolute;
+            top: 6px;
+            right: 24px;
+          }
+        `}
+      </style>
+
       <AllInOneMenu.IconMenu
-        icon="tool-paint-fill"
+        icon="icon-tool-brush"
         backLabel="Window Level & Presets"
         verticalDirection={verticalDirection}
         horizontalDirection={horizontalDirection}
         iconClassName={classNames(
           // Visible on hover and for the active viewport
-          activeViewportId === viewportId ? 'visible pl-20' : 'invisible group-hover:visible pl-20',
-          'flex shrink-0 cursor-pointer rounded active:text-white text-primary-light',
+          activeViewportId === viewportId ? 'visible' : 'invisible group-hover:visible',
+          'flex shrink-0 p-1 mr-3 cursor-pointer rounded active:text-white text-primary-light icon-before-element',
           isLight ? ' hover:bg-secondary-dark' : 'hover:bg-secondary-light/60'
         )}
         menuStyle={{ maxHeight: vpHeight - 32, minWidth: 218 }}

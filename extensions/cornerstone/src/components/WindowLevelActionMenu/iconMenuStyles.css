@@ -1,0 +1,10 @@
+.icon-before-element::before {
+  content: 'LUT Map'; /* Adjust the content if needed */
+  display: block;
+  width: 10px; /* Adjust the width */
+  height: 10px; /* Adjust the height */
+  background-color: red; /* Adjust the background color */
+  position: absolute; /* Adjust the position */
+  top: -5px; /* Adjust the top position */
+  left: -5px; /* Adjust the left position */
+}
