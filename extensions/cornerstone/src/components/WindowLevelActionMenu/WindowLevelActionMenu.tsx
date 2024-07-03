@@ -133,7 +133,7 @@ export function WindowLevelActionMenu({
         horizontalDirection={horizontalDirection}
         iconClassName={classNames(
           // Visible on hover and for the active viewport
-          activeViewportId === viewportId ? 'visible' : 'invisible group-hover:visible',
+          activeViewportId === viewportId ? 'visible pl-20' : 'invisible group-hover:visible pl-20',
           'flex shrink-0 cursor-pointer rounded active:text-white text-primary-light',
           isLight ? ' hover:bg-secondary-dark' : 'hover:bg-secondary-light/60'
         )}
@@ -144,15 +144,15 @@ export function WindowLevelActionMenu({
         menuKey={menuKey}
       >
         <AllInOneMenu.ItemPanel>
-          {/* {!is3DVolume && (
-        //   <Colorbar
-        //     viewportId={viewportId}
-        //     displaySets={displaySets.filter(ds => !nonImageModalities.includes(ds.Modality))}
-        //     commandsManager={commandsManager}
-        //     servicesManager={servicesManager}
-        //     colorbarProperties={colorbarProperties}
-        //   />
-        )} */}
+          {!is3DVolume && (
+            <Colorbar
+              viewportId={viewportId}
+              displaySets={displaySets.filter(ds => !nonImageModalities.includes(ds.Modality))}
+              commandsManager={commandsManager}
+              servicesManager={servicesManager}
+              colorbarProperties={colorbarProperties}
+            />
+          )}
 
           {colormaps && !is3DVolume && (
             // <AllInOneMenu.SubMenu

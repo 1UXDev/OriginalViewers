@@ -1,5 +1,5 @@
 window.config = {
-  routerBasename: '/', // "/ohif"
+  routerBasename: '/ohif', // "/ohif"
   whiteLabeling: {
     createLogoComponentFn: function (React) {
       return React.createElement(
