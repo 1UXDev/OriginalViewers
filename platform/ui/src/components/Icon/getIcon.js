@@ -336,6 +336,7 @@ const ICONS = {
   'tool-point': toolCircle,
   'tool-freehand-line': toolFreehand,
   'tool-freehand-polygon': toolFreehandPolygon,
+  'tool-paint-fill': toolPaintFill,
   'tool-polygon': toolPolygon,
   'tool-3d-rotate': iconToolRotate,
   'edit-patient': editPatient,
