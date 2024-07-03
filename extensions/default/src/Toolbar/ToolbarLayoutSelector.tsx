@@ -18,17 +18,18 @@ const defaultCommonPresets = [
     },
   },
   {
+    // customized, was 2x3, for perfusion
+    icon: 'layout-advanced-mpr',
+    commandOptions: {
+      numRows: 1,
+      numCols: 3,
+    },
+  },
+  {
     icon: 'layout-common-2x2',
     commandOptions: {
       numRows: 2,
       numCols: 2,
-    },
-  },
-  {
-    icon: 'layout-common-2x3',
-    commandOptions: {
-      numRows: 2,
-      numCols: 3,
     },
   },
 ];
@@ -169,7 +170,7 @@ function LayoutSelector({
       disableToolTip={tooltipDisabled}
       dropdownContent={
         DropdownContent !== null && (
-          <div className="flex ">
+          <div className="flex">
             <div className="bg-secondary-dark flex flex-col gap-2.5 p-2">
               <div className="text-aqua-pale text-xs">Common</div>
 
@@ -204,7 +205,7 @@ function LayoutSelector({
               </div>
             </div>
 
-            <div className="bg-primary-dark flex flex-col gap-2.5 border-l-2 border-solid border-black  p-2">
+            <div className="bg-primary-dark flex flex-col gap-2.5 border-l-2 border-solid border-black p-2">
               <div className="text-aqua-pale text-xs">Custom</div>
               <DropdownContent
                 rows={rows}

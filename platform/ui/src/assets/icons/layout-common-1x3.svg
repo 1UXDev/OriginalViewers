@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 16.6">
+    <defs>
+        <style>.cls-1{fill:none;stroke:#000;}</style>
+    </defs>
+    <g id="Layout-select----FINAL">
+        <g id="layout-common-2x2">
+            <rect id="Rectangle" class="cls-1" x=".5" y=".5" width="26" height="15.6" rx="2" ry="2" />
+            <path id="Rectangle-2" class="cls-1"
+                d="M9.5.5H2.5C1.4.5.5,1.4.5,2.5v11.6c0,1.1.9,2,2,2h7V.5Z" />
+            <path id="Rectangle-3" class="cls-1" d="M17.5,16.1V.5h-7" />
+            <path id="Rectangle-4" class="cls-1" d="M10.5,16.1h8" />
+            <path id="Rectangle-5" class="cls-1"
+                d="M26.5,2.5c0-1.1-.9-2-2-2H2.5C1.4.5.5,1.4.5,2.5v6h0" />
+        </g>
+    </g>
+</svg>

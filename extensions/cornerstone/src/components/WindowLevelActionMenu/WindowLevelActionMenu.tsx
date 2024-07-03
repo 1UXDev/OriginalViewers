@@ -113,39 +113,53 @@ export function WindowLevelActionMenu({
   ]);
 
   return (
-    <AllInOneMenu.IconMenu
-      icon="viewport-window-level"
-      verticalDirection={verticalDirection}
-      horizontalDirection={horizontalDirection}
-      iconClassName={classNames(
-        // Visible on hover and for the active viewport
-        activeViewportId === viewportId ? 'visible' : 'invisible group-hover:visible',
-        'flex shrink-0 cursor-pointer rounded active:text-white text-primary-light',
-        isLight ? ' hover:bg-secondary-dark' : 'hover:bg-secondary-light/60'
-      )}
-      menuStyle={{ maxHeight: vpHeight - 32, minWidth: 218 }}
-      onVisibilityChange={() => {
-        setVpHeight(element.clientHeight);
-      }}
-      menuKey={menuKey}
-    >
-      <AllInOneMenu.ItemPanel>
-        {!is3DVolume && (
-          <Colorbar
-            viewportId={viewportId}
-            displaySets={displaySets.filter(ds => !nonImageModalities.includes(ds.Modality))}
-            commandsManager={commandsManager}
-            servicesManager={servicesManager}
-            colorbarProperties={colorbarProperties}
-          />
+    <>
+      <span
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 28,
+          zIndex: 100,
+          fontSize: 14,
+          color: 'white',
+        }}
+      >
+        ColorMap
+      </span>
+      <AllInOneMenu.IconMenu
+        icon="viewport-window-level"
+        backLabel="Window Level & Presets"
+        verticalDirection={verticalDirection}
+        horizontalDirection={horizontalDirection}
+        iconClassName={classNames(
+          // Visible on hover and for the active viewport
+          activeViewportId === viewportId ? 'visible pl-20' : 'invisible group-hover:visible pl-20',
+          'flex shrink-0 cursor-pointer rounded active:text-white text-primary-light',
+          isLight ? ' hover:bg-secondary-dark' : 'hover:bg-secondary-light/60'
         )}
+        menuStyle={{ maxHeight: vpHeight - 32, minWidth: 218 }}
+        onVisibilityChange={() => {
+          setVpHeight(element.clientHeight);
+        }}
+        menuKey={menuKey}
+      >
+        <AllInOneMenu.ItemPanel>
+          {!is3DVolume && (
+            <Colorbar
+              viewportId={viewportId}
+              displaySets={displaySets.filter(ds => !nonImageModalities.includes(ds.Modality))}
+              commandsManager={commandsManager}
+              servicesManager={servicesManager}
+              colorbarProperties={colorbarProperties}
+            />
+          )}
 
-        {colormaps && !is3DVolume && (
-          <AllInOneMenu.SubMenu
-            key="colorLUTPresets"
-            itemLabel="Color LUT"
-            itemIcon="icon-color-lut"
-          >
+          {colormaps && !is3DVolume && (
+            // <AllInOneMenu.SubMenu
+            //   key="colorLUTPresets"
+            //   itemLabel="Color LUT"
+            //   itemIcon="icon-color-lut"
+            // >
             <Colormap
               colormaps={colormaps}
               viewportId={viewportId}
@@ -153,10 +167,10 @@ export function WindowLevelActionMenu({
               commandsManager={commandsManager}
               servicesManager={servicesManager}
             />
-          </AllInOneMenu.SubMenu>
-        )}
+            // </AllInOneMenu.SubMenu>
+          )}
 
-        {presets && presets.length > 0 && !is3DVolume && (
+          {/* {presets && presets.length > 0 && !is3DVolume && (
           <AllInOneMenu.SubMenu
             key="windowLevelPresets"
             itemLabel={t('Modality Window Presets')}
@@ -168,28 +182,29 @@ export function WindowLevelActionMenu({
               presets={presets}
             />
           </AllInOneMenu.SubMenu>
-        )}
+        )} */}
 
-        {volumeRenderingPresets && is3DVolume && (
-          <VolumeRenderingPresets
-            servicesManager={servicesManager}
-            viewportId={viewportId}
-            commandsManager={commandsManager}
-            volumeRenderingPresets={volumeRenderingPresets}
-          />
-        )}
-
-        {volumeRenderingQualityRange && is3DVolume && (
-          <AllInOneMenu.SubMenu itemLabel="Rendering Options">
-            <VolumeRenderingOptions
+          {volumeRenderingPresets && is3DVolume && (
+            <VolumeRenderingPresets
+              servicesManager={servicesManager}
               viewportId={viewportId}
               commandsManager={commandsManager}
-              volumeRenderingQualityRange={volumeRenderingQualityRange}
-              servicesManager={servicesManager}
+              volumeRenderingPresets={volumeRenderingPresets}
             />
-          </AllInOneMenu.SubMenu>
-        )}
-      </AllInOneMenu.ItemPanel>
-    </AllInOneMenu.IconMenu>
+          )}
+
+          {volumeRenderingQualityRange && is3DVolume && (
+            <AllInOneMenu.SubMenu itemLabel="Rendering Options">
+              <VolumeRenderingOptions
+                viewportId={viewportId}
+                commandsManager={commandsManager}
+                volumeRenderingQualityRange={volumeRenderingQualityRange}
+                servicesManager={servicesManager}
+              />
+            </AllInOneMenu.SubMenu>
+          )}
+        </AllInOneMenu.ItemPanel>
+      </AllInOneMenu.IconMenu>
+    </>
   );
 }

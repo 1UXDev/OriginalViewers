@@ -108,7 +108,7 @@ export function Colormap({
           </ButtonGroup>
         </div>
       )}
-      <div className="all-in-one-menu-item flex w-full justify-center">
+      {/* <div className="all-in-one-menu-item flex w-full justify-center">
         <SwitchButton
           label="Preview in viewport"
           checked={showPreview}
@@ -116,7 +116,7 @@ export function Colormap({
             setShowPreview(checked);
           }}
         />
-      </div>
+      </div> */}
       <AllInOneMenu.DividerItem />
       <AllInOneMenu.ItemPanel>
         {colormaps.map((colormap, index) => (
