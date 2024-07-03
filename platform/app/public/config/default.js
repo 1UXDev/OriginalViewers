@@ -21,7 +21,7 @@ window.config = {
   extensions: [],
   modes: [],
   customizationService: {},
-  showStudyList: true,
+  showStudyList: false,
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 24,
   // below flag is for performance reasons, but it might not work for all servers
@@ -49,88 +49,88 @@ window.config = {
   //   // regex: /(https:\/\/hospital.com(\/[0-9A-Za-z.]+)*)|(https:\/\/othersite.com(\/[0-9A-Za-z.]+)*)/
   //   regex: /.*/,
   // },
-  // dataSources: [
-  //   {
-  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-  //     sourceName: 'dicomweb',
-  //     configuration: {
-  //       friendlyName: 'Orthanc Server',
-  //       name: 'Orthanc',
-  //       wadoUriRoot: 'https://skill-circle.com/dicomweb/dicom-web',
-  //       qidoRoot: 'https://skill-circle.com/dicomweb/dicom-web',
-  //       wadoRoot: 'https://skill-circle.com/dicomweb/dicom-web',
-  //       qidoSupportsIncludeField: true,
-  //       supportsReject: true,
-  //       imageRendering: 'wadors',
-  //       thumbnailRendering: 'wadors',
-  //       omitQuotationForMultipartRequest: true,
-  //       enableStudyLazyLoad: true,
-  //       supportsFuzzyMatching: true,
-  //       supportsWildcard: true,
-  //       dicomUploadEnabled: false,
-  //       bulkDataURI: {
-  //         enabled: false, // check if this resolves error -> it does
-  //       },
-  //     },
-  //   },
-  //   {
-  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
-  //     sourceName: 'dicomjson',
-  //     configuration: {
-  //       friendlyName: 'dicom json',
-  //       name: 'json',
-  //     },
-  //   },
-  //   {
-  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
-  //     sourceName: 'dicomlocal',
-  //     configuration: {
-  //       friendlyName: 'dicom local',
-  //     },
-  //   },
-  // ],
-  // // DATA SOURCES for testing
   dataSources: [
     {
-      friendlyName: 'dcmjs DICOMWeb Server',
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
       sourceName: 'dicomweb',
       configuration: {
-        name: 'aws',
-        // old server
-        // wadoUriRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/wado',
-        // qidoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
-        // wadoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
-        // new server
-        wadoUriRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
-        qidoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
-        wadoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        supportsReject: false,
+        friendlyName: 'Orthanc Server',
+        name: 'Orthanc',
+        wadoUriRoot: 'https://skill-circle.com/dicomweb/dicom-web',
+        qidoRoot: 'https://skill-circle.com/dicomweb/dicom-web',
+        wadoRoot: 'https://skill-circle.com/dicomweb/dicom-web',
+        qidoSupportsIncludeField: true,
+        supportsReject: true,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
+        omitQuotationForMultipartRequest: true,
         enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
+        supportsFuzzyMatching: true,
         supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video,pdf',
+        dicomUploadEnabled: false,
+        bulkDataURI: {
+          enabled: false, // check if this resolves error -> it does
+        },
       },
     },
     {
-      friendlyName: 'dicom json',
       namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
       sourceName: 'dicomjson',
       configuration: {
+        friendlyName: 'dicom json',
         name: 'json',
       },
     },
     {
-      friendlyName: 'dicom local',
       namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
       sourceName: 'dicomlocal',
-      configuration: {},
+      configuration: {
+        friendlyName: 'dicom local',
+      },
     },
   ],
+  // // DATA SOURCES for testing
+  // dataSources: [
+  //   {
+  //     friendlyName: 'dcmjs DICOMWeb Server',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+  //     sourceName: 'dicomweb',
+  //     configuration: {
+  //       name: 'aws',
+  //       // old server
+  //       // wadoUriRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/wado',
+  //       // qidoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
+  //       // wadoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
+  //       // new server
+  //       wadoUriRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       qidoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       wadoRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  //       qidoSupportsIncludeField: false,
+  //       supportsReject: false,
+  //       imageRendering: 'wadors',
+  //       thumbnailRendering: 'wadors',
+  //       enableStudyLazyLoad: true,
+  //       supportsFuzzyMatching: false,
+  //       supportsWildcard: true,
+  //       staticWado: true,
+  //       singlepart: 'bulkdata,video,pdf',
+  //     },
+  //   },
+  //   {
+  //     friendlyName: 'dicom json',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
+  //     sourceName: 'dicomjson',
+  //     configuration: {
+  //       name: 'json',
+  //     },
+  //   },
+  //   {
+  //     friendlyName: 'dicom local',
+  //     namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
+  //     sourceName: 'dicomlocal',
+  //     configuration: {},
+  //   },
+  // ],
   httpErrorHandler: error => {
     // This is 429 when rejected from the public idc sandbox too often.
     console.warn(error.status);
