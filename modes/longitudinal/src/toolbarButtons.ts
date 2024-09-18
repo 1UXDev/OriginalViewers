@@ -78,20 +78,61 @@ const toolbarButtons: Button[] = [
   },
 
   // ImageSliceSync
+  // {
+  //   id: 'ImageSliceSync',
+  //   uiType: 'ohif.radioGroup',
+
+  //   props: {
+  //     type: 'toggle',
+  //     icon: 'link',
+  //     label: 'Image Slice Sync',
+  //     tooltip: 'Enable position synchronization on stack viewports',
+  //     commands: [
+  //       {
+  //         commandName: 'toggleSynchronizer',
+  //         commandOptions: {
+  //           type: 'imageSlice',
+  //         },
+  //       },
+  //       {
+  //         commandName: 'setToolActiveToolbar',
+  //         commandOptions: {
+  //           toolGroupIds: ['stack'],
+  //         },
+  //       },
+  //     ],
+  //     listeners: {
+  //       [EVENTS.STACK_VIEWPORT_NEW_STACK]: {
+  //         commandName: 'toggleImageSliceSync',
+  //         commandOptions: { toggledState: true },
+  //       },
+  //     },
+  //     evaluate: ['evaluate.cornerstone.synchronizer', 'evaluate.not3D'],
+  //   },
+  // },
+
   {
     id: 'ImageSliceSync',
     uiType: 'ohif.radioGroup',
+
     props: {
       type: 'toggle',
       icon: 'link',
-      label: 'Image Slice Sync',
-      tooltip: 'Enable position synchronization on stack viewports',
+      lable: 'Image Sync',
       commands: [
         {
           commandName: 'toggleSynchronizer',
           commandOptions: {
             type: 'imageSlice',
           },
+          context: 'CORNERSTONE',
+        },
+        {
+          commandName: 'setToolActive',
+          commandOptions: {
+            toolName: 'ImageSliceSync',
+          },
+          context: 'CORNERSTONE',
         },
       ],
       listeners: {

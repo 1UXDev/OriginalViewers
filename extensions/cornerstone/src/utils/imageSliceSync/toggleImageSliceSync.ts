@@ -12,6 +12,8 @@ export default function toggleImageSliceSync({
 
   syncId ||= IMAGE_SLICE_SYNC_NAME;
 
+  console.log('debug', 'toggleImageSliceSync -> syncId', syncId);
+
   const viewports =
     providedViewports || getReconstructableStackViewports(viewportGridService, displaySetService);
 
@@ -28,9 +30,21 @@ export default function toggleImageSliceSync({
     return !!imageSync;
   });
 
+  // visually activate the sync. get Element data-cy="ImageSliceSync"
+  // custom function, not the most elegant way to do it.
+  const syncButton = document.querySelector('[data-cy="ImageSliceSync"]');
+
   if (someViewportHasSync) {
+    syncButton?.classList.remove('bg-white');
+    const SVG = syncButton?.querySelectorAll('svg path')[1];
+
+    SVG?.setAttribute('stroke', '#fff');
     return disableSync(syncId, servicesManager);
-  }
+  } else {
+    syncButton?.classList.add('bg-white');
+    const SVG = syncButton.querySelectorAll('svg path')[1];
+    SVG?.setAttribute('stroke', '#000');
+  } // end of custom function
 
   // create synchronization group and add the viewports to it.
   viewports.forEach(gridViewport => {

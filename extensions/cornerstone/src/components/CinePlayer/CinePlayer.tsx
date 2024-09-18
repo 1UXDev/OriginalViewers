@@ -214,7 +214,8 @@ function RenderCinePlayer({
 
   return (
     <CinePlayerComponent
-      className="absolute left-1/2 bottom-1 -translate-x-1/2"
+      // className="absolute left-1/2 bottom-1 -translate-x-1/2"
+      className="absolute left-1/2 mt-6 flex -translate-x-1/2 justify-self-start"
       frameRate={newStackFrameRate}
       isPlaying={isPlaying}
       onClose={() => {
