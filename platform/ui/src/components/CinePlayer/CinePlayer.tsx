@@ -75,7 +75,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
   return (
     <div
       className={className}
-      style={{ opacity: '0.85' }}
+      style={{ opacity: '0.75' }}
     >
       {isDynamic && dynamicInfo && (
         <InputRange
@@ -85,7 +85,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
           maxValue={dynamicInfo.numTimePoints - 1}
           step={1}
           containerClassName="mb-2 w-full"
-          labelClassName="text-xs text-white"
+          labelClassName="text-s text-white"
           leftColor="#3a3f99"
           rightColor="#3a3f99"
           trackHeight="3px"
@@ -94,7 +94,7 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
           showLabel={false}
         />
       )}
-      <div className=" bg-secondary-dark inline-flex select-none items-center gap-6 rounded px-1 py-1">
+      <div className=" bg-secondary-dark inline-flex select-none items-center gap-3 rounded px-1 py-1">
         <Icon
           name={getPlayPauseIconName()}
           className="active:text-primary-light hover-bg-customblue-300 h-5 w-5 cursor-pointer text-white hover:rounded"
