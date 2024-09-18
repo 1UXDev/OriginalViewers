@@ -30,21 +30,35 @@ export default function toggleImageSliceSync({
     return !!imageSync;
   });
 
-  // visually activate the sync. get Element data-cy="ImageSliceSync"
-  // custom function, not the most elegant way to do it.
-  const syncButton = document.querySelector('[data-cy="ImageSliceSync"]');
-
   if (someViewportHasSync) {
-    syncButton?.classList.remove('bg-white');
-    const SVG = syncButton?.querySelectorAll('svg path')[1];
-
-    SVG?.setAttribute('stroke', '#fff');
     return disableSync(syncId, servicesManager);
-  } else {
-    syncButton?.classList.add('bg-white');
-    const SVG = syncButton.querySelectorAll('svg path')[1];
-    SVG?.setAttribute('stroke', '#000');
-  } // end of custom function
+  }
+
+  // // visually activate the sync. get Element data-cy="ImageSliceSync"
+  // // custom function, not the most elegant way to do it.
+  // const allViewportsHaveSync = viewports.every(viewport => {
+  //   const syncStates = syncGroupService.getSynchronizersForViewport(
+  //     viewport.viewportOptions.viewportId
+  //   );
+
+  //   const imageSync = syncStates.find(syncState => syncState.id === syncId);
+
+  //   return !!imageSync;
+  // });
+
+  // const syncButton = document.querySelector('[data-cy="ImageSliceSync"]');
+
+  // if (allViewportsHaveSync) {
+  //   syncButton?.classList.remove('bg-white');
+  //   const SVG = syncButton?.querySelectorAll('svg path')[1];
+
+  //   SVG?.setAttribute('stroke', '#fff');
+  //   return disableSync(syncId, servicesManager);
+  // } else {
+  //   syncButton?.classList.add('bg-white');
+  //   const SVG = syncButton.querySelectorAll('svg path')[1];
+  //   SVG?.setAttribute('stroke', '#000');
+  //} // end of custom function
 
   // create synchronization group and add the viewports to it.
   viewports.forEach(gridViewport => {
